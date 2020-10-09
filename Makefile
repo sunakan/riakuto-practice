@@ -13,6 +13,10 @@ include makefiles/help.mk
 ################################################################################
 # タスク
 ################################################################################
-.PHONY: deploy-docs
-deploy-docs: ## ドキュメントをデプロイする
-	git subtree push --prefix docs/html/ origin gh-pages
+.PHONY: bash
+bash:
+	docker-compose run --rm --service-ports node bash
+
+.PHONY: chown
+chown:
+	sudo chown -R $(USER):$(USER) ./
