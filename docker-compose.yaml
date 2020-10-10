@@ -4,10 +4,10 @@ services:
   node:
     image: node:14-slim
     working_dir: /var/local/app-01
-    #volumes:
-    #  - type: bind
-    #    source: ${PWD}/app-01/
-    #    target: /var/local/app-01/
+    volumes:
+      - type: bind
+        source: ${PWD}/app-01/
+        target: /var/local/app-01/
     ports:
       - 3000:3000
     environment:
